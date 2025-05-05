@@ -1,0 +1,15 @@
+<h1 class="mt-5">Olá, {{aluno}}</h1>
+<div>
+    <img [src]="urlImagem">
+</div>
+<div>
+    <button (click)="clicar()">Alterar Nome</button>
+</div>
+<div>
+    <button (click)="incrementar()">Incrementar</button>
+    <h2>Contador de cliques: {{cont}}</h2>
+</div>
+<div>
+    <input type="text" [(ngModel)]="urlImagem">
+    <h3>{{aluno}}</h3>
+</div>
