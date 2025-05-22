@@ -1,0 +1,20 @@
+<div id="divinicial">
+  <div class="form-check form-switch">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      role="switch"
+      id="flexSwitchCheckDefault"
+      [(ngModel)]="mostrar"
+    />
+    <label class="form-check-label" for="flexSwitchCheckDefault"
+      >Mostrar Livros</label
+    >
+  </div>
+
+  <div *ngFor="let livro of listaLivros">
+    <p *ngIf="mostrar">
+        {{ livro.titulo }}
+    </p>
+  </div>
+</div>
