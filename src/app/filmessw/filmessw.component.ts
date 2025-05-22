@@ -14,4 +14,6 @@ export class FilmesswComponent {
 
   filmes = filmesswDB.results;
 
+  array = [false, false, false, false, false, false];
+
 }
