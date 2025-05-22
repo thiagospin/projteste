@@ -1,0 +1,20 @@
+<table class="table mt-5">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Título</th>
+      <th scope="col">Diretor</th>
+      <th scope="col">Produtor</th>
+      <th scope="col">Data de Lançamento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let filme of filmes; index as i">
+      <th scope="row">{{i+1}}</th>
+      <td><a [href]="filme.url">{{filme.title}}</a></td>
+      <td>{{filme.director}}</td>
+      <td>{{filme.producer}}</td>
+      <td>{{filme.release_date}}</td>
+    </tr>
+  </tbody>
+</table>
