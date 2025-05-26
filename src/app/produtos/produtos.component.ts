@@ -12,11 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ProdutosComponent {
 
-  constructor( private apiProdutos: ServicesService ) {
-    this.myJSON = JSON;
-  }
-
-  myJSON = JSON;
+  constructor( private apiProdutos: ServicesService ) { }
   
   exibirTabela= false;
   exibirCard = false;
