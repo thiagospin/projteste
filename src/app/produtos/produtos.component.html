@@ -1,0 +1,64 @@
+<div class="principal">
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="w-25">
+      <button class="btn btn-primary m-5" (click)="listarProdutos()">
+        Listar Todos
+      </button>
+    </div>
+    <div class="w-75 input-group">
+      <button class="btn btn-primary" type="button" (click)="listarProdutoPeloID(id)">Consultar Produto</button>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="id do produto"
+        [(ngModel)]="id"
+      />
+    </div>
+    <div class="w-25">
+        <button class="btn btn-warning m-5" (click)="limparForm()">Limpar</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="exibirTabela">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Dados</th>
+        <th scope="col">Consultar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of produtosExibidos; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>
+          <table>
+            <tbody>
+              <tr *ngFor="let dado of item.data | keyvalue">
+                <td>{{ dado.key }} - {{ dado.value }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <button class="btn btn-secondary" (click)="listarProdutoPeloID(item.id)">abrir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div
+  *ngIf="exibirCard"
+  class="w-100 d-flex justify-content-center align-items-center"
+>
+  <div class="card w-25">
+    <div class="card-header">{{produtoSimples.name}}</div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let dado of produtoSimples.data | keyvalue">{{dado.key}} - {{dado.value}}</li>
+    </ul>
+  </div>
+</div>
