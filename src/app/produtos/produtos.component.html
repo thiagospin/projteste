@@ -53,9 +53,9 @@
 </div>
 <div
   *ngIf="exibirCard"
-  class="w-100 d-flex justify-content-center align-items-center"
+  class="w-100 d-flex justify-content-center align-items-center mt-5"
 >
-  <div class="card w-25">
+  <div class="card w-50">
     <div class="card-header">{{produtoSimples.name}}</div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item" *ngFor="let dado of produtoSimples.data | keyvalue">{{dado.key}} - {{dado.value}}</li>

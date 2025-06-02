@@ -1,0 +1,54 @@
+<div style="margin-top: 70px; margin-left: 20px">
+  <div class="input-group mb-3">
+    <span class="input-group-text col-2">Nome</span>
+    <input class="col-4" type="text" [(ngModel)]="novoProduto.name" />
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text col-2">Capacidade</span>
+    <input
+      class="col-4"
+      type="text"
+      [(ngModel)]="novoProduto.data.capacidade"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text col-2">Cor</span>
+    <input class="col-4" type="text" [(ngModel)]="novoProduto.data.cor" />
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text col-2">Preço</span>
+    <input class="col-4" type="text" [(ngModel)]="novoProduto.data.preco" />
+  </div>
+  <div class="d-flex align-items-center justify-content-start">
+    <button class="btn btn-primary" (click)="cadastrar(novoProduto)">
+      Cadastrar
+    </button>
+  </div>
+</div>
+
+<div class="container text-center" *ngIf="resposta">
+  <div class="row">
+    <div class="col">
+      <div>
+        <span>ID: </span>
+        <span class="text-bg-dark">{{ resposta.id }}</span>
+      </div>
+      <div>
+        <span>Nome: </span>
+        <span class="text-bg-dark">{{ resposta.name }}</span>
+      </div>
+      <div>
+        <span>Capacidade: </span>
+        <span class="text-bg-dark">{{ resposta.data.capacidade }}</span>
+      </div>
+      <div>
+        <span>Cor: </span>
+        <span class="text-bg-dark">{{ resposta.data.cor }}</span>
+      </div>
+      <div>
+        <span>Preço: </span>
+        <span class="text-bg-dark">{{ resposta.data.preco }}</span>
+      </div>
+    </div>
+  </div>
+</div>
